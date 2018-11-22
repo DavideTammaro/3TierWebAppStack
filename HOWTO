@@ -2,7 +2,7 @@ First read the README file
 
 Deploy a CentOS VM for every type of server and log in as root.
 
-On every CentOS system configure the /etc/hosts to map all system involved in the web application stack. Change the IP as your requirements, not the name.
+On every CentOS system configure the /etc/hosts to map all system involved in the web application stack. Change the IP as your requirements, not the name if you want to use the provided scripts.
 
 :~ root# echo "10.10.10.10 webserver1 " >> /etc/hostswebserver1 
 :~ root# "10.10.10.20 appserver1 " >> /etc/hostswebserver1
