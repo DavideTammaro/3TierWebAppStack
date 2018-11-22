@@ -6,4 +6,5 @@ If you need to simulate tcp/udp listner as well as sending traffic to those list
 REQUIREMENTS:
 
 -Deploy CentOS images, at lease 3 (1 as Frontend, 1 as appserver, 1 as db)
+
 -configure name resolution via /etc/hosts if you would like to use host names instead of IPs
