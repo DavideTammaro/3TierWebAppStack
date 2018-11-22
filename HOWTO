@@ -1,0 +1,61 @@
+First read the README file
+
+Deploy a CentOS VM for every type of server and log in as root.
+
+On every CentOS system configure the /etc/hosts to map all system involved in the web application stack. Change the IP as your requirements, not the name.
+
+:~ root# echo "10.10.10.10 webserver1 " >> /etc/hostswebserver1 
+:~ root# "10.10.10.20 appserver1 " >> /etc/hostswebserver1
+:~ root# "10.10.10.30 db1 " >> /etc/hostswebserver1
+
+verify every systems can reach each other.
+
+
+On webserver1 system, copy the file webserver.sh locally on ./root/ 
+After the copy make it executable for root:
+
+:~ root# chmod 700 webserver1.sh
+
+On appserver1 system, copy the file appserver.sh locally on ./root/ 
+After the copy make it executable for root:
+
+:~ root# chmod 700 appserver1.sh
+
+On db1 system, copy the file db1.sh locally on ./root/ 
+After the copy make it executable for root:
+
+:~ root# chmod 700 db1.sh
+
+
+Launch the scripts in this sequence otherwise processes will exit due to no listner reached:
+
+1. on DB1 login as root and execute the command:
+:~ root# ./db1.sh
+
+2. on appserver1:
+:~ root# appserver1.sh
+
+3. on webserver1:
+:~ root# webserver1.sh
+
+setup completed: socat lister are running and nc processes are sending data. All processes are attached to specific screen sessions managed by tmux
+If you want to connect to a socat or nc session use the command "tmux attach -t sessionname" 
+
+example:
+if you want to check data traffic from webserver to appserver, login as root on appserver1 and type:
+
+:~ root# tmux list-sessions
+
+Identify the session you want to connect to (lister8080 to see received data) and execute:
+
+:~ root# tmux attach -t listner8080
+
+If you want to detach the screen and leave processes running, digit CTRL+b d
+
+If you want to restart the socat listener or nc, re-run the script, but remember the sequence (Db1>appserver1>webserver1)
+
+
+
+
+
+
