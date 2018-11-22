@@ -27,7 +27,7 @@ After the copy make it executable for root:
 :~ root# chmod 700 db1.sh
 
 
-Launch the scripts in this sequence otherwise processes will exit due to no listner reached:
+Launch the scripts in this sequence otherwise processes will exit due to no listener reached:
 
 1. on DB1 login as root and execute the command:
 :~ root# ./db1.sh
@@ -38,7 +38,7 @@ Launch the scripts in this sequence otherwise processes will exit due to no list
 3. on webserver1:
 :~ root# webserver1.sh
 
-setup completed: socat lister are running and nc processes are sending data. All processes are attached to specific screen sessions managed by tmux
+setup completed: socat listeners are running and nc processes are sending data. All processes are attached to specific screen sessions managed by tmux
 If you want to connect to a socat or nc session use the command "tmux attach -t sessionname" 
 
 example:
@@ -46,9 +46,9 @@ if you want to check data traffic from webserver to appserver, login as root on 
 
 :~ root# tmux list-sessions
 
-Identify the session you want to connect to (lister8080 to see received data) and execute:
+Identify the session you want to connect to (listener to see received data) and execute:
 
-:~ root# tmux attach -t listner8080
+:~ root# tmux attach -t listener
 
 If you want to detach the screen and leave processes running, digit CTRL+b d
 
