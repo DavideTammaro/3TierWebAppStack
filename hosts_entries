@@ -1,0 +1,5 @@
+#change x.y.w.z with IP address and append those lines to /etc/hosts files on the three servers
+
+x.y.w.z Appserver1
+x.y.w.z Db1
+x.y.w.z Webserver1
