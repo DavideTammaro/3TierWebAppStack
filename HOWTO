@@ -1,15 +1,18 @@
 First read the README file
 
-Deploy a CentOS VM for every type of server and log in as root.
+Configuration tasks:
 
-On every CentOS system configure the /etc/hosts to map all system involved in the web application stack. Change the IP as your requirements, not the name if you want to use the provided scripts.
+-Deploy CentOS images, at lease 3 (1 as Frontend, 1 as appserver, 1 as db)
 
-:~ root# echo "10.10.10.10 webserver1 " >> /etc/hostswebserver1 
-:~ root# "10.10.10.20 appserver1 " >> /etc/hostswebserver1
-:~ root# "10.10.10.30 db1 " >> /etc/hostswebserver1
+-on every server add those 3 lines in /etc/hosts changing IP address as your configuration:
 
-verify every systems can reach each other.
+x.y.w.z webserver1
+x.y.w.z appserver1
+x.y.w.z db1
 
+-verify servers can ping each other with provided names
+
+Execution task: ##note: scripts work only with host names specified above. Change scripts if you want to use different names or IP address instead.
 
 On webserver1 system, copy the file webserver.sh locally on ./root/ 
 After the copy make it executable for root:
